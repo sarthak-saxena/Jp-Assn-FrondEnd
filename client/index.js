@@ -1,12 +1,13 @@
 import React from 'react'
-import {
-  Provider
-} from 'react-redux'
+import { Provider } from 'react-redux'
+import { Route } from 'react-router'
 import createStore from './store.jsx'
 import ReactDOM from 'react-dom'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import RouteComponent from './components/RouteComponent.jsx'
+import { Routes } from './constants/routes.js'
+
 // See documentation for https://github.com/reactjs/react-redux.
 // This is how you get props from the Rails view into the redux store.
 // This code here binds your smart component to the redux store.
@@ -15,10 +16,10 @@ import RouteComponent from './components/RouteComponent.jsx'
 const store = createStore()
 console.log(store)
 const history = createHistory()
-const reactComponent = ( 
+const reactComponent = (
 <Provider store={store} >
   <ConnectedRouter history={history}>
-    <RouteComponent />
+    <RouteComponent history={history}/>
   </ConnectedRouter>
 </Provider>)
 ReactDOM.render(reactComponent, document.getElementById('root'))

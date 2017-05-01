@@ -5,54 +5,27 @@ import { Route, Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { isUserLoggedIn, isAdminLoggedIn } from '../actions/Login/loginActions.jsx'
 
-@connect((store) => {
-  return {
-    dispatch: store.dispatch
-  }
-})
-
 export default class RouteComponent extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-  }
-
   render() {
-    const { dispatch } = this.props
+    const { history } = this.props
     let userToken = isUserLoggedIn()
     let adminToken = isAdminLoggedIn()
-    let routes = []
-    let routesDom = []
-    if (userToken) {
-      routes = Routes
-      dispatch({type: "SET_TOKEN", payload: userToken})
-      routesDom =     routes.map((route) => {
-      if (route.exact) {
-        return <Route exact path={route.path} component={route.component} />
-      } else {
-        return <Route path={route.path} component={route.component} />
-      }
-    })
-    } else if (adminToken) {
-      routes = Routes
-      dispatch({type: "SET_TOKEN", payload: userToken})
-      routesDom =     routes.map((route) => {
-      if (route.exact) {
-        return <Route exact path={route.path} component={route.component} />
-      } else {
-        return <Route path={route.path} component={route.component} />
-      }
-    })
-    } else {
-      console.log('hihihihihi');
-      routesDom = <Redirect to='/login'></Redirect>
-      routes = Routes.filter((r) => { !r.login })
-      dispatch({type: "SET_TOKEN", payload: undefined})
+
+    let routesDom =
+      Routes.map((r) => {
+        let route = r.exact ? <Route exact path={r.path} component={r.component} />
+          : <Route path={r.path} component={r.component} />
+        return route
+      })
+
+    if(!userToken || !adminToken) {
+      routesDom = routesDom.concat(<Redirect from="/" to="/login" />)
     }
-    
+
     return (
      <div>
       {routesDom}
-    </div>
+     </div>
     )
   }
 }
