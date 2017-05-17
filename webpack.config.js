@@ -27,7 +27,7 @@ const config = {
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
     alias: {
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
@@ -47,8 +47,14 @@ const config = {
     }, {
       test: /\.jsx?$/,
       loader: 'babel-loader',
-      exclude: /node_modules/,
-    }, ],
+      exclude: /node_modules/
+    },{
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    },{
+      test: /\.scss$/,
+      loader: 'style-loader!css-loader?url=false!sass-loader'
+    }]
   },
   devServer: {
     historyApiFallback: true
