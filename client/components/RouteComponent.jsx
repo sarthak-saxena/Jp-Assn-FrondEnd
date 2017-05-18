@@ -9,9 +9,6 @@ import _ from 'lodash'
 export default class RouteComponent extends React.Component {
   render() {
     const { history } = this.props
-    let userToken = isUserLoggedIn()
-    let adminToken = isAdminLoggedIn()
-    console.log(userToken)
 
     let routesDom =
       Routes.map((r, i) => {
@@ -20,10 +17,10 @@ export default class RouteComponent extends React.Component {
         return route
       })
 
-    if(!_.isEmpty(userToken) || !!_.isEmpty(adminToken)) {
-      routesDom = routesDom.concat(<Redirect from="/" to="/login" />)
+    if(isUserLoggedIn() || isAdminLoggedIn()) {
+      routesDom = routesDom.concat(<Redirect from="/" to="/foo" />)
     } else {
-      routesDom.concat(<Redirect from="/login" to="/foo" />)
+      routesDom = routesDom.concat(<Redirect from="/" to="/login" />)
     }
 
     return (

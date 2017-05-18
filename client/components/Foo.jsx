@@ -4,7 +4,7 @@ export default class Foo extends React.Component {
   render() {
     return (
      <div style={{textAlign: 'center'}}>
-        <h1>Hello Foo</h1>
+        <h1>User logged in</h1>
       </div>
     )
   }

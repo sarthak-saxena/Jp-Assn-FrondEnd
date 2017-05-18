@@ -61,6 +61,7 @@ export default class Login extends React.Component {
     }).then((response) => {
       console.log(response.data.auth_token)
       window.localStorage.setItem('userToken', response.data.auth_token)
+      window.location.href = '/foo'
     }).catch(() => {
       message.error('Invalid username or password')
     })

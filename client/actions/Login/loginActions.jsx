@@ -1,17 +1,8 @@
-import { instanceOf } from 'prop-types'
 export function isUserLoggedIn() {
-  console.log(window)
-  if (window.localStorage['userToken']) {
-    return false
-  } else {
-    return window.localStorage['userToken']
-  }
+  console.log('1234', window.localStorage['userToken'])
+  return window.localStorage['userToken'] ? true : false
 }
 
 export function isAdminLoggedIn() {
-  if (window.localStorage['adminToken']) {
-    return false
-  } else {
-    return window.localStorage['adminToken']
-  }
+  return window.localStorage['adminToken'] ? true : false
 }
