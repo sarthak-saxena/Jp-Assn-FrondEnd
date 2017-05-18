@@ -15,7 +15,6 @@ import 'antd/dist/antd.css'
 // railsContext provides contextual information especially useful for server rendering, such as
 // knowing the locale. See the React on Rails documentation for more info on the railsContext
 const store = createStore()
-console.log(store)
 const history = createHistory()
 const reactComponent = (
 <Provider store={store} >

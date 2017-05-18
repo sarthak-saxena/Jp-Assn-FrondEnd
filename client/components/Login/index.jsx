@@ -52,14 +52,12 @@ export default class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
     request.post('/api/login', {
       login_credentials: {
         email: this.state.username,
         password: this.state.password
       }
     }).then((response) => {
-      console.log(response.data.auth_token)
       window.localStorage.setItem('userToken', response.data.auth_token)
       window.location.href = '/foo'
     }).catch(() => {

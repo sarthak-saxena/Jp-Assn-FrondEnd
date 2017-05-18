@@ -11,7 +11,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 // const nodeEnv = devBuild ? 'development' : 'production';
 const devBuild = process.env.NODE_ENV === 'development';
 const testBuild = process.env.NODE_ENV === 'test';
-const nodeEnv = 'development'
+const nodeEnv = devBuild ? 'development' : (testBuild ? 'test' : 'production');
+const apiHost = devBuild ? 'http://localhost:5000' : testBuild ?
+ 'https://staging.adwyze.com' : 'https://platform.adwyze.com';
 
 const config = {
   entry: [
@@ -38,6 +40,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(nodeEnv),
+        API_HOST: JSON.stringify(apiHost)
       },
     }), HtmlWebpackPluginConfig
   ],
@@ -70,6 +73,7 @@ if (devBuild) {
 } else {
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
       output: {
         comments: false
       },
