@@ -11,7 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 // const nodeEnv = devBuild ? 'development' : 'production';
 const devBuild = process.env.NODE_ENV === 'development';
 const testBuild = process.env.NODE_ENV === 'test';
-const nodeEnv = devBuild ? 'development' : (testBuild ? 'test' : 'production');
+const nodeEnv = 'development'
 
 const config = {
   entry: [
@@ -27,10 +27,11 @@ const config = {
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss', '.png'],
     alias: {
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
+      images: path.resolve('./client/assets/images')
     },
   },
   plugins: [
@@ -48,10 +49,10 @@ const config = {
       test: /\.jsx?$/,
       loader: 'babel-loader',
       exclude: /node_modules/
-    },{
+    }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
-    },{
+    }, {
       test: /\.scss$/,
       loader: 'style-loader!css-loader?url=false!sass-loader'
     }]

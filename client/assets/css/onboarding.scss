@@ -1,0 +1,419 @@
+#onboarding_react {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 6%;
+  margin: 0 -15px 0 -15px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  .logo {
+    width: 128px;
+    margin-top: -35px;
+    margin-bottom: 16px;
+  }
+  .bg-thead {
+    background: #F5F6F7;
+    border-bottom: 3px solid #F5F6F7;
+  }
+  .progress-indicator {
+    font-size: 73%;
+    padding: 10px 10% 0 10%;
+  }
+  .start-container {
+    width: 61%;
+    margin-left: 20%;
+    border: 1px solid #d9d6d6;
+    border-radius: 2px;
+    margin-bottom: 11%;
+    .tab-pane {
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+    .subsection {
+      margin: 42px 0 62px 0;
+      position: relative;
+      .overlayLoader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        top: 3px;
+        z-index: 99;
+        .loader-image {
+          margin: auto;
+          display: block;
+          margin-top: 20%;
+          width: 80px;
+        }
+      }
+      .image {
+        margin: 18px 0 26px 0;
+      }
+      h4 {
+        margin-top: -11px;
+        margin-bottom: 26px;
+      }
+    }
+    .btn-connect {
+      padding: 11px;
+      background: #3A589B;
+      font-size: 17px;
+      border-color: #3A589B;
+      font-weight: normal;
+    }
+    .btn-blue {
+      background: #4ad4ce;
+      border-color: #4ad4ce;
+      padding-right: 36px;
+      padding-left: 36px;
+    }
+  }
+  .accounts-container {
+    margin: 0px 27px 100px 27px;
+    position: relative;
+    .tab-pane {
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+    .subsection {
+      margin: 42px 0 62px 0;
+      .image {
+        margin: 18px 0 26px 0;
+      }
+    }
+    .btn-connect {
+      width: 147px;
+      padding: 11px;
+      background: #3A589B;
+      border-color: #3A589B;
+    }
+    .btn-acc-connect {
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .subsection2 {
+      margin: 0px 0 10px 0;
+      .analytics-text {
+        margin-left: -40px;
+        margin-top: 7px;
+        font-size: 15px;
+      }
+      .analytics-row {
+        margin-top: 14px;
+      }
+    }
+    .subsection3 {
+      margin-bottom: 116px;
+      .company-preference-labels {
+        margin-left: -24px;
+        margin-top: 4px;
+        font-size: 15px;
+      }
+      .img-clock {
+        width: 37px;
+        margin-left: 4px;
+        margin-top: -2px;
+      }
+      .currency {
+        margin-top: -19px;
+        margin-bottom: 10px;
+      }
+      .timezone {
+        margin-top: -21px;
+      }
+      .glyphicon {
+        top: 2px;
+      }
+    }
+    .subsection4 {
+      table {
+        width: 70%;
+        margin-top: 25px;
+        .select-option {
+          width: 64%;
+          display: inherit;
+        }
+        button {
+          margin-left: 11px;
+          margin-top: -4px;
+          .glyphicon {
+            top: 3px;
+            right: -1px;
+          }
+        }
+        .btn-blue {
+          background: #4A90E2 !important;
+          border-color: #4A90E2 !important;
+        }
+        .btn-red {
+          background: #DA7481 !important;
+          border-color: #DA7481 !important;
+          .glyphicon-remove {
+            color: white !important;
+          }
+        }
+        thead {
+          background: #EDF0F2;
+        }
+      }
+    }
+    .connect-accounts {
+      .channel-container {
+        background: white;
+        width: 160px;
+        height: 150px;
+        padding: 16px 0 0 0;
+        border-radius: 3px;
+        margin: 16px;
+        img {
+          margin: 5px 0 14px 0;
+        }
+        .text {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        a {
+          color: #4f77af;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .custom-analytics {
+    .upload-section {
+      border: 1px solid #f1f1f1;
+      padding: 16px;
+      background: #F7F9FB;
+      .btn-add {
+        border-radius: 2px;
+        padding: 5px 26px 5px 26px;
+        background: #544CA5;
+        border: none;
+        margin: 14px 32px 0 0;
+      }
+      .input-fields {
+        padding: 4px 0px 4px 7px;
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+    .delete {
+      font-size: 16px;
+      margin-left: 14px;
+    }
+    table {
+      margin-top: 30px;
+    }
+  }
+  .btn-proceed {
+    width: 188px;
+    padding: 4px;
+    font-size: 15px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 19%;
+    right: 6%;
+    background-color: #50D4B6;
+    color: white;
+    &:hover {
+      background-color: #61ad95;
+    }
+  }
+  .preferences {
+    .preferences-container {
+      margin: 22px 0 0 10px;
+      label {
+        margin-right: -45px;
+      }
+      .label-error {
+        color: #ef817f;
+        margin: 2px 0 0 17px;
+        background: none;
+        border: none;
+        margin: 2px 0 0 17px;
+      }
+      .currency {
+        margin-bottom: 16px;
+      }
+    }
+    .Select-control {
+      height: 30px !important;
+      border-radius: 2px !important;
+      margin-top: -4px;
+      width: 80%;
+      .Select-value-label {
+        color: #6d6d6d !important;
+      }
+      .Select-value {
+        line-height: 26px !important;
+      }
+    }
+  }
+  .finalize {
+    margin-top: 20px;
+    img {
+      width: 3.5%;
+    }
+    .progress {
+      width: 16%;
+      height: 5px;
+      margin: 36px 0 20px 0;
+      .progress-bar {
+        background-color: #4bd3ce;
+      }
+    }
+  }
+  .progress-indicator > li.active .bubble {
+    background-color: #5AC5C5;
+    border-color: #5AC5C5;
+  }
+  .progress-indicator > li.active .bubble:before,
+  .progress-indicator > li.active .bubble:after {
+    background-color: #5AC5C5;
+    border-color: #5AC5C5;
+  }
+  .progress-indicator > li .bubble:before,
+  .progress-indicator > li .bubble:after {
+    height: 5px !important;
+    top: 5px !important
+  }
+}
+
+.onboarding-modal {
+  .modal-dialog {
+    -webkit-transform: translate(0, 0) !important;
+    -webkit-animation-delay: 5s;
+    position: absolute !important;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    top: -31px;
+    margin-bottom: 0;
+    .modal-content {
+      height: 100%;
+      border-radius: 0;
+      .modal-header {
+        button.close {
+          float: left;
+          padding: 8px 10px;
+          padding-top: 12px;
+          border: 1px solid #ddd;
+          border-right: 0;
+          margin-left: -40px;
+          margin-top: -16px !important;
+          background-color: #fff !important;
+          box-shadow: 0;
+          cursor: pointer;
+          opacity: 1;
+          color: #777;
+        }
+      }
+      .modal-body {
+        min-height: 76%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    }
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #4773B2 !important;
+    border-color: #4773B2 !important;
+    border-radius: 2px;
+  }
+  .btn-connect {
+    margin: 12px 0 3px 10px;
+    font-size: 12px;
+    width: 87px;
+  }
+  .ad-account-table {
+    width: 91% !important;
+    margin: 34px;
+    font-size: 13px;
+    .btn-active {
+      padding: 0px 11px 11px 11px;
+      border-radius: 2px;
+      height: 19px;
+      background-color: #70C386!important;
+      border-color: #70C386!important;
+    }
+    .btn-inactive {
+      padding: 0px 11px 11px 11px;
+      border-radius: 2px;
+      height: 19px;
+    }
+    thead {
+      color: #C8C8C8;
+      text-transform: uppercase;
+      font-size: 12px;
+      th {
+        background: none;
+        border: none;
+        text-align: left;
+      }
+    }
+    tbody {
+      tr {
+        border-top: 1px solid #F5F5F5;
+        &:nth-child(odd) {
+          background: #FAFAFA;
+        }
+        td {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .ga-accounts-table {
+    width: 100%;
+    font-size: 13px;
+    .w10 {
+      width: 10px;
+    }
+    .ga-internal-table {
+      margin-left: 13%;
+    }
+    thead {
+      color: #C8C8C8;
+      text-transform: uppercase;
+      font-size: 12px;
+      th {
+        text-align: left;
+      }
+    }
+    tbody {
+      border-top: 1px solid #F5F5F5 !important;
+      &:nth-child(odd) {
+        background: #FAFAFA !important;
+      }
+    }
+  }
+  .ant-input {
+    box-shadow: none;
+    border-radius: 2px;
+    height: 34px;
+    margin-bottom: 20px;
+  }
+  .comscore-container {
+    padding: 23px 12% 0 12%;
+    .Select-control {
+      height: 28px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      .Select-value {
+        text-align: left;
+        font-size: 12px;
+        .Select-clear-zone {
+          display: none;
+        }
+      }
+      .Select-menu-outer {
+        text-align: left;
+      }
+    }
+  }
+}
