@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 const FormItem = Form.Item
-import request from '../shared/request'
+import axios from 'axios'
 
 import '../../assets/css/login.scss'
 
@@ -12,7 +12,7 @@ const LoginForm = Form.create()(
     const { getFieldDecorator } = form
     return (
       <center className="login">
-        <img src="images/AdwyzeLogo.png"/>
+        <img src="images/juspay.png"/>
         <h1>Sign In</h1>
         <Form onSubmit={handleSubmit} className="login-form">
           <FormItem>
@@ -30,7 +30,7 @@ const LoginForm = Form.create()(
             )}
           </FormItem>
           <FormItem>
-            <a className="login-form-forgot" href="">Forgot password</a>
+            <a className="login-form-forgot" href="">Sign Up</a>
             <Button type="primary" htmlType="submit" className="login-form-button">
               Log in
             </Button>
@@ -52,16 +52,18 @@ export default class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    request.post('/api/login', {
-      login_credentials: {
-        email: this.state.username,
-        password: this.state.password
-      }
+    axios.post('/login/loginUser', {
+      email: this.state.username,
+      password: this.state.password
     }).then((response) => {
-      window.localStorage.setItem('userToken', response.data.auth_token)
-      window.location.href = '/foo'
+      if(response.data.success) {
+        window.localStorage.setItem('login', response.success)
+        window.location.href = '/main'
+      } else {
+        message.error('Invalid username or password')
+      }
     }).catch(() => {
-      message.error('Invalid username or password')
+      message.error('Error logging in')
     })
   }
 

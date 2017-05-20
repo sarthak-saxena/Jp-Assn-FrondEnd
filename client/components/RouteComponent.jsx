@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Routes } from '../constants/routes.js'
 import { Route, Redirect } from 'react-router'
 import { connect } from 'react-redux'
-import { isUserLoggedIn, isAdminLoggedIn } from '../actions/Login/loginActions.jsx'
+import { isUserLoggedIn } from '../actions/Login/loginActions.jsx'
 import _ from 'lodash'
 
 export default class RouteComponent extends React.Component {
@@ -17,8 +17,8 @@ export default class RouteComponent extends React.Component {
         return route
       })
 
-    if(isUserLoggedIn() || isAdminLoggedIn()) {
-      routesDom = routesDom.concat(<Redirect from="/" to="/foo" />)
+    if(isUserLoggedIn()) {
+      routesDom = routesDom.concat(<Redirect from="/" to="/main" />)
     } else {
       routesDom = routesDom.concat(<Redirect from="/" to="/login" />)
     }

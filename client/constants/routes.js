@@ -1,8 +1,8 @@
-import Foo from '../components/Foo.jsx'
+import Main from '../components/main.jsx'
 import Login from '../components/Login/index.jsx'
 export const Routes = [{
-    path: '/foo',
-    component: Foo
+    path: '/main',
+    component: Main
   }, {
     path: '/login',
     component:  Login,

@@ -5,15 +5,13 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
   inject: 'body'
-})
+});
 
 // const devBuild = process.env.NODE_ENV !== 'production';
 // const nodeEnv = devBuild ? 'development' : 'production';
 const devBuild = process.env.NODE_ENV === 'development';
-const testBuild = process.env.NODE_ENV === 'test';
-const nodeEnv = devBuild ? 'development' : (testBuild ? 'test' : 'production');
-const apiHost = devBuild ? 'http://localhost:3000' : testBuild ?
- 'https://staging.adwyze.com' : 'https://platform.adwyze.com';
+const nodeEnv = devBuild ? 'development' : 'production';
+const apiHost = 'http://localhost:1337';
 
 const config = {
   entry: [
@@ -29,7 +27,7 @@ const config = {
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css', '.scss', '.png'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
     alias: {
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
@@ -45,6 +43,9 @@ const config = {
     }), HtmlWebpackPluginConfig
   ],
   module: {
+    loaders: [{
+      exclude: [/node_modules/, /images/]
+    }],
     rules: [{
       test: require.resolve('react'),
       loader: 'imports-loader?shim=es5-shim/es5-shim&sham=es5-shim/es5-sham',
