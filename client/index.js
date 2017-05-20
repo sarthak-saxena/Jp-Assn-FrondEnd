@@ -9,6 +9,7 @@ import createHistory from 'history/createBrowserHistory'
 import RouteComponent from './components/RouteComponent.jsx'
 import { Routes } from './constants/routes.js'
 import 'antd/dist/antd.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 // See documentation for https://github.com/reactjs/react-redux.
 // This is how you get props from the Rails view into the redux store.
