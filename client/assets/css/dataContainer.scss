@@ -1,0 +1,51 @@
+.dataConatiner {
+  height: 600px;
+  border: 1px solid #f2eeee;
+  display: flex;
+  padding: 24px 0 0 12px;
+  margin: 12px;
+  .list-group-item {
+    cursor: pointer
+  }
+}
+
+.ant-modal {
+  width: 50% !important;
+  position: absolute !important;
+  right: 0;
+  height: 100%;
+  top: 0 !important;
+  padding-bottom: 0 !important;
+  .ant-modal-content {
+    border-radius: 0px;
+    height: 100%;
+  }
+}
+
+.chat-container {
+  padding: 12px;
+  input {
+    width: 80%;
+  }
+  button {
+    margin-left: 7px;
+  }
+  .chat {
+    margin: -14px 14px 22px 0;
+    border: 1px solid gainsboro;
+    padding: 19px;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  .infoMsg {
+    color: #9a9898;
+    margin-top: 14px;
+  }
+}
+
+.share-location {
+  margin: 10px !important;
+  a {
+    margin-right: 11px;
+  }
+}

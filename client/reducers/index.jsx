@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
-import login from './loginReducer'
 
-const rootReducer = combineReducers({
-  login
-})
+import mapReducer, { initialState as mapInitialState } from './mapReducer'
 
-export default rootReducer
+export default {
+  mapStore: mapReducer
+}
+
+export const initialStates = {
+  mapInitialState
+}

@@ -1,7 +1,7 @@
 .login {
-  margin-top: 6%;
+  margin-top: 2%;
   img {
-    width: 100px;
+    width: 80px;
   }
   h1 {
     font-weight: 200;
@@ -20,5 +20,11 @@
   }
   .login-form-button {
     width: 100%;
+  }
+  .ant-select {
+    text-align: left;
+    .ant-select-selection__rendered {
+      line-height: 21px;
+    }
   }
 }

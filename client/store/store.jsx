@@ -3,9 +3,17 @@ import createLogger from 'redux-logger'
 
 import thunkMiddleware from 'redux-thunk'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
-import reducers from '../reducers/index.jsx'
+import reducers from '../reducers'
+import { initialStates } from '../reducers';
 
 export default props => {
+  const { mapInitialState } = initialStates
+  // Redux expects to initialize the store using an Object, not an Immutable.Map
+  const initialState = {
+    mapStore: mapInitialState,
+
+  };
+
   const reducer = combineReducers({
     ...reducers,
     router: routerReducer
@@ -15,7 +23,7 @@ export default props => {
     applyMiddleware(thunkMiddleware, middleware)
   )
   const storeCreator = composedStore(createStore)
-  const store = storeCreator(reducer)
+  const store = storeCreator(reducer, initialState)
 
   return store
 }
